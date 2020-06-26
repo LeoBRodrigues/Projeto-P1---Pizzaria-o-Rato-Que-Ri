@@ -21,7 +21,8 @@ public class Funcionario implements LoginSistema {
     }
 
     /**
-     * Gera um Hash de 32 bits para armazenar a senha de forma segura
+     * Gera um Hash de 32 bits para armazenar a senha de forma segura.
+     * Senha NUNCA devem ser salvas, apenas seu hash.
      * @param senha (String com a senha do usuario)
      * @return (Retorna uma string com o hash gerado)
      */
