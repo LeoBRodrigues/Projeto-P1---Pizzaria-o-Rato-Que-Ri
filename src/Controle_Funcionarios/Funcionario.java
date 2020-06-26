@@ -4,6 +4,7 @@ public class Funcionario implements LoginSistema {
 
 
     private String nome, email, senha;
+    private boolean acessoSistema = false;
 
 
     /**
@@ -47,7 +48,18 @@ public class Funcionario implements LoginSistema {
 
     }
 
+
+
+    public void autorizadoSistema(String senha){
+
+        if(comparadorHash(geradorHash(senha)))
+            this.acessoSistema = true;
+    }
+
+
     //Getters
 
     public String getNome() { return nome; }
+    public boolean getAcessoSistema(){ return acessoSistema; }
+
 }

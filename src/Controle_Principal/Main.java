@@ -15,7 +15,6 @@ public class Main {
 
         String nome, email, senha, descricao_pedido, preco_pedido, ID_check;
         int opcao_menu, opcao_pagamento;
-        boolean senha_valida;
 
         Scanner scanner = new Scanner(System.in); // Armazena entrada do usuario
         ArrayList<Pedidos> listaPedidos = new ArrayList<>(); // Armazena os Pedidos
@@ -44,11 +43,9 @@ public class Main {
             // Verifica se a senha está correta. Prossegue para o programa de qualquer forma.
             // Primeiramente gera o hash da senha e compara com o hash armazenado.
 
-            senha_valida = funcionario1.comparadorHash(funcionario1.geradorHash(scanner.nextLine()));
+            funcionario1.autorizadoSistema(scanner.nextLine());
 
-            // Oferece nova tentativa se senha estiver incorreta.
-
-            if(!senha_valida)
+            if(!funcionario1.getAcessoSistema())
             {
                 System.out.println("Atenção! Senha inválida.");
                 System.out.println("Algumas opção não poderão ser acessadas. Deseja prosseguir mesmo assim?");
@@ -69,7 +66,7 @@ public class Main {
                     case 1:
 
                         // verifica acesso
-                        if(!senha_valida)
+                        if(!funcionario1.getAcessoSistema())
                         {
                             System.out.println("Senha Inválida! Entre novamente.");
                             break;
@@ -94,7 +91,7 @@ public class Main {
                     case 2:
 
                         //verifica acesso
-                        if(!senha_valida)
+                        if(!funcionario1.getAcessoSistema())
                         {
                             System.out.println("Senha Inválida! Entre novamente.");
                             break;
