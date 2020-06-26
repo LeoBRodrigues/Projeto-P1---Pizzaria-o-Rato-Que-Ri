@@ -10,10 +10,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Variáveis do Programa
+        // Variáveis e estruturas do Programa
 
 
-        String nome, email, senha, descricao_pedido, preco_pedido;
+        String nome, email, senha, descricao_pedido, preco_pedido, ID_check;
         int opcao_menu, opcao_pagamento;
         boolean senha_valida;
 
@@ -61,6 +61,7 @@ public class Main {
                 switch (opcao_menu) {
                     case 1:
 
+                        // verifica acesso
                         if(!senha_valida)
                         {
                             System.out.println("Senha Inválida! Entre novamente.");
@@ -84,16 +85,29 @@ public class Main {
                         break;
 
                     case 2:
+
+                        //verifica acesso
+                        if(!senha_valida)
+                        {
+                            System.out.println("Senha Inválida! Entre novamente.");
+                            break;
+                        }
+
+                        System.out.println("Digite o ID do pedido a ser alterado: ");
+                        ID_check = scanner.nextLine();
+
+
                         break;
                     case 3:
 
                         if (listaPedidos.isEmpty()) {
 
                             System.out.println("Nenhum pedido cadastrado nesta sessão.");
+
                         } else {
 
-                            for (Pedidos pedidos : listaPedidos) {
-
+                            for (Pedidos pedidos : listaPedidos)
+                            {
                                 menu.info_pagamentos(pedidos);
                                 System.out.println("------------------------------------");
                             }
@@ -103,7 +117,9 @@ public class Main {
                         break;
                     case 4:
                         break;
+
                     default:
+                        System.out.println("Opção Inválida.");
                         break;
                 }
             } while (opcao_menu != 4);
