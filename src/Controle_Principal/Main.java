@@ -20,6 +20,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in); // Armazena entrada do usuario
         ArrayList<Pedidos> listaPedidos = new ArrayList<>(); // Armazena os Pedidos
 
+        Menu menu = new Menu(); // Menus a serem utilizados no programa
+
 
         //Funcionario para Teste
 
