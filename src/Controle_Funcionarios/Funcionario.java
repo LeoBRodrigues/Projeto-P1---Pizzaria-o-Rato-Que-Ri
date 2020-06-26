@@ -1,6 +1,6 @@
 package Controle_Funcionarios;
 
-public class Funcionario extends LoginSistema {
+public class Funcionario implements LoginSistema {
 
 
     private String nome, email, senha;
