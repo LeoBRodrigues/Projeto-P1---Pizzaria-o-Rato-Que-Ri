@@ -53,7 +53,7 @@ public class Main {
 
             do {
 
-                opcao_menu = opcao_menu = Integer.parseInt(scanner.nextLine());
+                opcao_menu = Integer.parseInt(scanner.nextLine());
 
                 switch (opcao_menu) {
                     case 1:
