@@ -8,22 +8,24 @@ import java.util.ArrayList;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
         // Variáveis e estruturas do Programa
 
 
-        String nome, email, senha, descricao_pedido, preco_pedido, ID_check;
+        String nome, email, senha, descricao_pedido, preco_pedido;
         int opcao_menu, opcao_pagamento;
 
         Scanner scanner = new Scanner(System.in); // Armazena entrada do usuario
         ArrayList<Pedidos> listaPedidos = new ArrayList<>(); // Armazena os Pedidos
-        ArrayList<Funcionario> listaFuncionarios = new ArrayList<>(); // Armazena Funcionarios
+        // Armazena Funcionarios. Não implementado no momento, porém permite multiplos usuarios em versões futuras.
+        ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
 
         Menu menu = new Menu(); // Menus a serem utilizados no programa
 
 
-        //Funcionario para Teste
+        //Funcionario para Teste, adicionado à lista de funcionarios.
 
         senha = "123456";
         nome = "Murilo Zanini";
@@ -43,9 +45,9 @@ public class Main {
             // Verifica se a senha está correta. Prossegue para o programa de qualquer forma.
             // Primeiramente gera o hash da senha e compara com o hash armazenado.
 
-            funcionario1.loginSistema(scanner.nextLine());
+            listaFuncionarios.get(0).loginSistema(scanner.nextLine());
 
-            if(!funcionario1.getAcessoSistema())
+            if(!listaFuncionarios.get(0).getAcessoSistema())
             {
                 System.out.println("Atenção! Senha inválida.");
                 System.out.println("Algumas opção não poderão ser acessadas. Deseja prosseguir mesmo assim?");
@@ -91,38 +93,25 @@ public class Main {
                     case 2:
 
                         //verifica acesso
-                        if(!funcionario1.getAcessoSistema())
+                        if(!listaFuncionarios.get(0).getAcessoSistema())
                         {
                             System.out.println("Senha Inválida! Entre novamente.");
                             break;
                         }
 
+
                         System.out.println("Digite o ID do pedido a ser alterado: ");
-                        ID_check = scanner.nextLine();
 
-                        for(int i = 0; i <= listaPedidos.size(); i++)
+                        int test = menu.encontraID(scanner.nextLine(), listaPedidos);
+
+                        if(test != 0)
                         {
-
-                            // Se o loop exceder os indices da lista, não há ID
-
-                            if (i == listaPedidos.size())
-                            {
-                                System.out.println("ID não encontrado");
-                                break;
-                            }
-
-                            // Altera o Status do pedido
-                            if (listaPedidos.get(i).getID().equals(ID_check)) {
-
-                                menu.menuEstadoPedido();
-
-                                listaPedidos.get(i).setEstadoPedido(Integer.parseInt(scanner.nextLine()));
-
-                                System.out.println("Estado alterado com Sucesso.");
-
-                                break;
-                            }
+                            menu.menuEstadoPedido();
+                            listaPedidos.get(test).setEstadoPedido(Integer.parseInt(scanner.nextLine()));
+                            System.out.println("Estado alterado com Sucesso.");
                         }
+                        else
+                            System.out.println("ID não encontrada");
 
                         break;
 
@@ -146,9 +135,10 @@ public class Main {
                     case 4:
 
                         // desloga o usúario quando acabar sua sessão.
-                        funcionario1.logoutSistema();
 
+                        listaFuncionarios.get(0).logoutSistema();
                         menu.despedida();
+
                         break;
 
                     default:
@@ -158,5 +148,8 @@ public class Main {
             } while (opcao_menu != 4);
         }
     }
+
 }
+
+
 

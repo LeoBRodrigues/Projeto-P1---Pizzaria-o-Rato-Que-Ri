@@ -2,6 +2,8 @@ package Controle_Principal;
 
 import Controle_Pedidos.Pedidos;
 
+import java.util.ArrayList;
+
 public class Menu {
 
 
@@ -9,7 +11,7 @@ public class Menu {
      * Menu de opções para o programa principal.
      */
 
-    public void menuPrincipal(){
+    public void menuPrincipal() {
 
         System.out.println("------------------------------------");
         System.out.println("-----------Menu Principal-----------");
@@ -28,7 +30,7 @@ public class Menu {
      * Menu de opções de pagamentos.
      */
 
-    public void menuPagamentos(){
+    public void menuPagamentos() {
 
         System.out.println("------------------------------------");
         System.out.println("---------Forma de Pagamento---------");
@@ -47,10 +49,11 @@ public class Menu {
 
     /**
      * Imprime toda as informações de um pedido.
+     *
      * @param pedidos (Instância do pedido a ser imprimido)
      */
 
-    public void infoPedidos(Pedidos pedidos){
+    public void infoPedidos(Pedidos pedidos) {
 
         System.out.println("ID: " + pedidos.getID());
         System.out.println("Descrição: " + pedidos.getDescricao_pedido());
@@ -63,7 +66,7 @@ public class Menu {
      * Menu de estados dos pedidos.
      */
 
-    public void menuEstadoPedido(){
+    public void menuEstadoPedido() {
 
         System.out.println("------------------------------------");
         System.out.println("----------Estado do Pedido----------");
@@ -81,9 +84,8 @@ public class Menu {
 
     /**
      * Mensagem de boas vindas do Login
-     *
      */
-    public void boasVindas(){
+    public void boasVindas() {
         System.out.println("------------------------------------");
         System.out.println("------Bem Vindo ao Rato Que Ri------");
         System.out.println("------------------------------------");
@@ -102,11 +104,26 @@ public class Menu {
      * Mensagem para Logout.
      */
 
-    public void despedida(){
+    public void despedida() {
         System.out.println("------------------------------------");
         System.out.println("----------Até a Próxima!!!----------");
         System.out.println("------------------------------------");
     }
 
 
+    /**
+     * Função para encontrar ID na lista de pedidos anteriores
+     *
+     * @param ID           (ID a ser encontrado)
+     * @param listaPedidos (Lista aonde pedidos estão armazenados)
+     * @return (retorna posição do ID na lista. 0, caso não encontre nada)
+     */
+    public int encontraID(String ID, ArrayList<Pedidos> listaPedidos) {
+        for (int i = 0; i < listaPedidos.size(); i++) {
+
+            if (listaPedidos.get(i).getID().equals(ID)) return i;
+        }
+
+        return 0;
+    }
 }
