@@ -55,6 +55,7 @@ public class Main {
 
             do {
 
+                menu.menu_principal();
                 opcao_menu = Integer.parseInt(scanner.nextLine());
 
                 switch (opcao_menu) {
@@ -85,6 +86,20 @@ public class Main {
                     case 2:
                         break;
                     case 3:
+
+                        if (listaPedidos.isEmpty()) {
+
+                            System.out.println("Nenhum pedido cadastrado nesta sessão.");
+                        } else {
+
+                            for (Pedidos pedidos : listaPedidos) {
+
+                                menu.info_pagamentos(pedidos);
+                                System.out.println("------------------------------------");
+                            }
+
+                        }
+
                         break;
                     case 4:
                         break;

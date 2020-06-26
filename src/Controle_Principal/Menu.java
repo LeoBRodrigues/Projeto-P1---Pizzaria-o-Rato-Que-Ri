@@ -1,5 +1,7 @@
 package Controle_Principal;
 
+import Controle_Pedidos.Pedidos;
+
 public class Menu {
 
 
@@ -31,5 +33,14 @@ public class Menu {
         System.out.println("Selecione sua opção: ");
         System.out.println("------------------------------------");
 
+    }
+
+    public void info_pagamentos(Pedidos pedidos){
+
+        System.out.println("ID: " + pedidos.getID());
+        System.out.println("Descrição: " + pedidos.getDescricao_pedido());
+        System.out.println("Forma de Pagamento: " + pedidos.getTipoPagamento());
+        System.out.println("Total: R$ " + pedidos.getPreco());
+        System.out.println("Status: " + pedidos.getStatus());
     }
 }
