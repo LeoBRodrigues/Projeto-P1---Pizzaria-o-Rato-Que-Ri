@@ -42,7 +42,7 @@ public class Pedidos implements IdPedidos{
         return pagamentoPedido;
     }
 
-    public EstadoPedido getStatus() {
+    public EstadoPedido getEstadoPedido() {
         return estadoPedido;
     }
 
@@ -50,5 +50,7 @@ public class Pedidos implements IdPedidos{
         return preco;
     }
 
+    //Setter
 
+    public void setEstadoPedido(int opcao_status){ this.estadoPedido = estadoPedido.values()[opcao_status - 1]; }
 }

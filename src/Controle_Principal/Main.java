@@ -55,7 +55,7 @@ public class Main {
 
             do {
 
-                menu.menu_principal();
+                menu.menuPrincipal();
                 opcao_menu = Integer.parseInt(scanner.nextLine());
 
                 switch (opcao_menu) {
@@ -73,10 +73,10 @@ public class Main {
                         System.out.println("Preço total do pedido: ");
                         preco_pedido = scanner.nextLine();
 
-                        menu.menu_pagamentos();
+                        menu.menuPagamentos();
                         opcao_pagamento = Integer.parseInt(scanner.nextLine());
 
-                        Pedidos novoPedido = new Pedidos(descricao_pedido, preco_pedido, opcao_pagamento)
+                        Pedidos novoPedido = new Pedidos(descricao_pedido, preco_pedido, opcao_pagamento);
 
                         listaPedidos.add(novoPedido);
 
@@ -96,6 +96,28 @@ public class Main {
                         System.out.println("Digite o ID do pedido a ser alterado: ");
                         ID_check = scanner.nextLine();
 
+                        for(int i = 0; i <= listaPedidos.size(); i++)
+                        {
+
+                            // Se o loop exceder os indices da lista, não há ID
+
+                            if (i == listaPedidos.size()) {
+                                System.out.println("ID não encontrado");
+                                break;
+                            }
+
+                            // Altera o Status do pedido
+                            if (listaPedidos.get(i).getID().equals(ID_check)) {
+                                menu.menuEstadoPedido();
+
+                                listaPedidos.get(i).setEstadoPedido(Integer.parseInt(scanner.nextLine()));
+
+                                System.out.println("Estado alterado com Sucesso.");
+
+                                break;
+                            }
+                        }
+
 
                         break;
                     case 3:
@@ -108,7 +130,7 @@ public class Main {
 
                             for (Pedidos pedidos : listaPedidos)
                             {
-                                menu.info_pagamentos(pedidos);
+                                menu.infoPagamentos(pedidos);
                                 System.out.println("------------------------------------");
                             }
 
