@@ -73,6 +73,9 @@ public class Main {
 
                         Pedidos novoPedido = new Pedidos(descricao_pedido, preco_pedido, opcao_pagamento)
 
+                        listaPedidos.add(novoPedido);
+
+                        System.out.println("Pedido realizado com sucesso.");
 
                         break;
 
