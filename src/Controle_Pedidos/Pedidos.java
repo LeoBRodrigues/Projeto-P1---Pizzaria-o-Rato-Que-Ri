@@ -28,4 +28,27 @@ public class Pedidos implements IdPedidos{
     }
 
 
+    // Getters
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getDescricao_pedido() {
+        return descricao_pedido;
+    }
+
+    public PagamentoPedido getTipoPagamento() {
+        return pagamentoPedido;
+    }
+
+    public EstadoPedido getStatus() {
+        return estadoPedido;
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+
 }
