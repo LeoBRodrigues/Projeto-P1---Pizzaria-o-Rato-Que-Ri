@@ -13,8 +13,8 @@ public class Main {
         // Variáveis do Programa
 
 
-        String nome, email, senha;
-        int opcao_menu;
+        String nome, email, senha, descricao_pedido, preco_pedido;
+        int opcao_menu, opcao_pagamento;
         boolean senha_valida;
 
         Scanner scanner = new Scanner(System.in); // Armazena entrada do usuario
@@ -30,9 +30,8 @@ public class Main {
         Funcionario funcionario1 = new Funcionario(nome, email, senha);
 
         // Loop do Login
-        while(true) {
 
-            // Loop do Menu
+        while(true) {
 
             System.out.println("Bem-vindo(a) " + nome + ". Por favor, digite sua senha:");
 
@@ -50,6 +49,8 @@ public class Main {
                 if(opcao_menu != 1) continue;
             }
 
+            // Loop do Menu
+
             do {
 
                 opcao_menu = opcao_menu = Integer.parseInt(scanner.nextLine());
@@ -62,6 +63,16 @@ public class Main {
                             System.out.println("Senha Inválida! Entre novamente.");
                             break;
                         }
+
+                        System.out.println("Descrição do pedido: ");
+                        descricao_pedido = scanner.nextLine();
+                        System.out.println("Preço total do pedido: ");
+                        preco_pedido = scanner.nextLine();
+
+                        opcao_pagamento = Integer.parseInt(scanner.nextLine());
+
+                        Pedidos novoPedido = new Pedidos(descricao_pedido, preco_pedido, opcao_pagamento)
+
 
                         break;
 
