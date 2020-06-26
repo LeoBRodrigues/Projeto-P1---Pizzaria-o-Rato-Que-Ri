@@ -42,9 +42,12 @@ public class Main {
 
             senha_valida = funcionario1.comparadorHash(funcionario1.geradorHash(scanner.nextLine()));
 
+            // Oferece nova tentativa se senha estiver incorreta.
+
             if(!senha_valida)
             {
-                System.out.println("Atenção! Senha inválida. Deseja prosseguir mesmo assim?");
+                System.out.println("Atenção! Senha inválida.");
+                System.out.println("Algumas opção não poderão ser acessadas. Deseja prosseguir mesmo assim?");
                 System.out.println("1. Sim\n2. Não");
                 opcao_menu = Integer.parseInt(scanner.nextLine());
 
@@ -101,13 +104,15 @@ public class Main {
 
                             // Se o loop exceder os indices da lista, não há ID
 
-                            if (i == listaPedidos.size()) {
+                            if (i == listaPedidos.size())
+                            {
                                 System.out.println("ID não encontrado");
                                 break;
                             }
 
                             // Altera o Status do pedido
                             if (listaPedidos.get(i).getID().equals(ID_check)) {
+
                                 menu.menuEstadoPedido();
 
                                 listaPedidos.get(i).setEstadoPedido(Integer.parseInt(scanner.nextLine()));
@@ -118,8 +123,8 @@ public class Main {
                             }
                         }
 
-
                         break;
+
                     case 3:
 
                         if (listaPedidos.isEmpty()) {

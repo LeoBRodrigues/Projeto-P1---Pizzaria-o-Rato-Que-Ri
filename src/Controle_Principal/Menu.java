@@ -15,14 +15,14 @@ public class Menu {
         System.out.println("3. Consultar Pedidos");
         System.out.println("4. Sair do Sistema");
         System.out.println("------------------------------------");
-        System.out.println("Selecione sua opção: ");
+        System.out.println("---------Selecione Sua Opção--------");
         System.out.println("------------------------------------");
     }
 
     public void menuPagamentos(){
 
         System.out.println("------------------------------------");
-        System.out.println("---Selecione a Forma de Pagamento---");
+        System.out.println("---------Forma de Pagamento---------");
         System.out.println("------------------------------------");
         System.out.println("1. Dinheiro");
         System.out.println("2. Cartão de Débito");
@@ -30,7 +30,7 @@ public class Menu {
         System.out.println("4. Vale Alimentação");
         System.out.println("5. Vale Refeição");
         System.out.println("------------------------------------");
-        System.out.println("Selecione sua opção: ");
+        System.out.println("---------Selecione Sua Opção--------");
         System.out.println("------------------------------------");
 
     }
@@ -47,7 +47,7 @@ public class Menu {
     public void menuEstadoPedido(){
 
         System.out.println("------------------------------------");
-        System.out.println("----Selecione o Estado do Pedido----");
+        System.out.println("----------Estado do Pedido----------");
         System.out.println("------------------------------------");
         System.out.println("1. Realizado");
         System.out.println("2. Em Preparação");
@@ -55,7 +55,7 @@ public class Menu {
         System.out.println("4. Entregue");
         System.out.println("5. Devolvido");
         System.out.println("------------------------------------");
-        System.out.println("Selecione sua opção: ");
+        System.out.println("---------Selecione Sua Opção--------");
         System.out.println("------------------------------------");
 
     }
