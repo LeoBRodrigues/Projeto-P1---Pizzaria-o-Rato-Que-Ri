@@ -19,6 +19,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in); // Armazena entrada do usuario
         ArrayList<Pedidos> listaPedidos = new ArrayList<>(); // Armazena os Pedidos
+        ArrayList<Funcionario> listaFuncionarios = new ArrayList<>(); // Armazena Funcionarios
 
         Menu menu = new Menu(); // Menus a serem utilizados no programa
 
@@ -30,12 +31,15 @@ public class Main {
         email = "zanini@ORQR.com";
 
         Funcionario funcionario1 = new Funcionario(nome, email, senha);
+        listaFuncionarios.add(funcionario1);
 
         // Loop do Login
 
         while(true) {
 
-            System.out.println("Bem-vindo(a) " + nome + ". Por favor, digite sua senha:");
+            menu.boasVindas();
+
+            System.out.println("Bem-vindo(a) " + listaFuncionarios.get(0).getNome() + ". Por favor, digite sua senha:");
 
             // Verifica se a senha está correta. Prossegue para o programa de qualquer forma.
             // Primeiramente gera o hash da senha e compara com o hash armazenado.
@@ -138,11 +142,13 @@ public class Main {
                                 menu.infoPagamentos(pedidos);
                                 System.out.println("------------------------------------");
                             }
-
                         }
 
                         break;
+
                     case 4:
+
+                        menu.despedida();
                         break;
 
                     default:

@@ -60,5 +60,26 @@ public class Menu {
 
     }
 
+    public void boasVindas(){
+        System.out.println("------------------------------------");
+        System.out.println("------Bem Vindo ao Rato Que Ri------");
+        System.out.println("------------------------------------");
+        System.out.println("    ORQR       _..----.._    _");
+        System.out.println("            .'  .--.    \"-.(0)_");
+        System.out.println("'-.__.-'\"'=:|   ,  _)_ \\__ . c\\'-..");
+        System.out.println("             '''------'---''---'-\"");
+        System.out.println("------------------------------------");
+        System.out.println("------A Melhor Pizza Do Mundo!------");
+        System.out.println("------------------------------------");
+
+
+    }
+
+    public void despedida(){
+        System.out.println("------------------------------------");
+        System.out.println("----------Até a Próxima!!!----------");
+        System.out.println("------------------------------------");
+    }
+
 
 }

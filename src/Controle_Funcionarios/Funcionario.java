@@ -47,8 +47,7 @@ public class Funcionario implements LoginSistema {
 
     }
 
+    //Getters
 
-
-
-
+    public String getNome() { return nome; }
 }
