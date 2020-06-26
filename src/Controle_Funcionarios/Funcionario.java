@@ -49,12 +49,21 @@ public class Funcionario implements LoginSistema {
     }
 
 
+    // Setters
+
+    /**
+     * Função para mudar o nível de acesso do funcionario. Caso a senha informada esteja correta
+     * muda os privilégios de acesso do funcionario.
+     * @param senha (senha informada para gerar e comparar o hash)
+     */
 
     public void autorizadoSistema(String senha){
 
         if(comparadorHash(geradorHash(senha)))
             this.acessoSistema = true;
     }
+
+    public void logoutSistema(){ this.acessoSistema = false;}
 
 
     //Getters

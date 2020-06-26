@@ -145,6 +145,8 @@ public class Main {
 
                     case 4:
 
+                        // desloga o usúario quando acabar sua sessão.
+                        funcionario1.logoutSistema();
                         menu.despedida();
                         break;
 
