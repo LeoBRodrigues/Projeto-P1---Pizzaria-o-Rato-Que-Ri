@@ -71,6 +71,7 @@ public class Main {
                         System.out.println("Preço total do pedido: ");
                         preco_pedido = scanner.nextLine();
 
+                        menu.menu_pagamentos();
                         opcao_pagamento = Integer.parseInt(scanner.nextLine());
 
                         Pedidos novoPedido = new Pedidos(descricao_pedido, preco_pedido, opcao_pagamento)
