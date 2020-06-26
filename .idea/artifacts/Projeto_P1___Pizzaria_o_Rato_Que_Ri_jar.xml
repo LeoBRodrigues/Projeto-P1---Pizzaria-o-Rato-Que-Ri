@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Projeto P1 - Pizzaria o Rato Que Ri:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Projeto_P1___Pizzaria_o_Rato_Que_Ri_jar</output-path>
+    <root id="archive" name="Projeto P1 - Pizzaria o Rato Que Ri.jar">
+      <element id="module-output" name="Projeto P1 - Pizzaria o Rato Que Ri" />
+    </root>
+  </artifact>
+</component>
