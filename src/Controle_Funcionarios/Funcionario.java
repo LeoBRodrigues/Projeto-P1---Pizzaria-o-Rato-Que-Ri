@@ -10,8 +10,23 @@ public class Funcionario extends LoginSistema {
 
         this.nome = nome;
         this.email = nome;
-        this.senha = senha;
+        this.senha = geradorHash(senha);
     }
+
+    @Override
+    public String geradorHash(String senha){
+
+        return Integer.toString(senha.hashCode());
+
+    }
+
+    @Override
+    public boolean comparadorHash(String hashRecebido){
+
+        return hashRecebido.equals(this.senha);
+
+    }
+
 
 
 
