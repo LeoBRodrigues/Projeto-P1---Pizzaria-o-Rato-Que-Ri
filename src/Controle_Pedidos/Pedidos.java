@@ -10,6 +10,13 @@ public class Pedidos implements IdPedidos{
     private PagamentoPedido pagamentoPedido;
     private String ID, preco, descricao_pedido;
 
+    /**
+     * Construtor da classe pedidos.
+     * @param descricao_pedido (Descrição do pedido realizado pelo cliente)
+     * @param preco (Custo do pedido)
+     * @param op_pagamento (Recebe opção númerica do menu de compra para o tipo de pagamento)
+     */
+
     public Pedidos(String descricao_pedido, String preco, int op_pagamento)
     {
         this.estadoPedido = EstadoPedido.REALIZADO;
@@ -19,6 +26,13 @@ public class Pedidos implements IdPedidos{
         this.preco = preco;
     }
 
+
+    /**
+     * Função para gerar um ID único para cada pedido. A partir de um UUID, utiliza apenas
+     * seus valores númericos, diminuindo a chance de colisões entre IDs quando
+     * utiza-se apenas o Random().
+     * @return (String com os números gerados)
+     */
 
     @Override
     public String IdPedidos(){

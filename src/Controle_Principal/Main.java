@@ -136,7 +136,7 @@ public class Main {
 
                             for (Pedidos pedidos : listaPedidos)
                             {
-                                menu.infoPagamentos(pedidos);
+                                menu.infoPedidos(pedidos);
                                 System.out.println("------------------------------------");
                             }
                         }
@@ -158,3 +158,4 @@ public class Main {
         }
     }
 }
+

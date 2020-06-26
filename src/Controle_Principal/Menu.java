@@ -5,6 +5,10 @@ import Controle_Pedidos.Pedidos;
 public class Menu {
 
 
+    /**
+     * Menu de opções para o programa principal.
+     */
+
     public void menuPrincipal(){
 
         System.out.println("------------------------------------");
@@ -18,6 +22,11 @@ public class Menu {
         System.out.println("---------Selecione Sua Opção--------");
         System.out.println("------------------------------------");
     }
+
+
+    /**
+     * Menu de opções de pagamentos.
+     */
 
     public void menuPagamentos(){
 
@@ -35,7 +44,13 @@ public class Menu {
 
     }
 
-    public void infoPagamentos(Pedidos pedidos){
+
+    /**
+     * Imprime toda as informações de um pedido.
+     * @param pedidos (Instância do pedido a ser imprimido)
+     */
+
+    public void infoPedidos(Pedidos pedidos){
 
         System.out.println("ID: " + pedidos.getID());
         System.out.println("Descrição: " + pedidos.getDescricao_pedido());
@@ -43,6 +58,10 @@ public class Menu {
         System.out.println("Total: R$ " + pedidos.getPreco());
         System.out.println("Status: " + pedidos.getEstadoPedido());
     }
+
+    /**
+     * Menu de estados dos pedidos.
+     */
 
     public void menuEstadoPedido(){
 
@@ -60,6 +79,10 @@ public class Menu {
 
     }
 
+    /**
+     * Mensagem de boas vindas do Login
+     *
+     */
     public void boasVindas(){
         System.out.println("------------------------------------");
         System.out.println("------Bem Vindo ao Rato Que Ri------");
@@ -74,6 +97,10 @@ public class Menu {
 
 
     }
+
+    /**
+     * Mensagem para Logout.
+     */
 
     public void despedida(){
         System.out.println("------------------------------------");

@@ -63,6 +63,10 @@ public class Funcionario implements LoginSistema {
             this.acessoSistema = true;
     }
 
+    /**
+     * Muda o nível de acesso do funcionario quando parar de utilizar o sistema.
+     */
+
     public void logoutSistema(){ this.acessoSistema = false;}
 
 
