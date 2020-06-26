@@ -57,7 +57,7 @@ public class Funcionario implements LoginSistema {
      * @param senha (senha informada para gerar e comparar o hash)
      */
 
-    public void autorizadoSistema(String senha){
+    public void loginSistema(String senha){
 
         if(comparadorHash(geradorHash(senha)))
             this.acessoSistema = true;

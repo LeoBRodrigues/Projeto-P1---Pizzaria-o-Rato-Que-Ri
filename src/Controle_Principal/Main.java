@@ -43,7 +43,7 @@ public class Main {
             // Verifica se a senha está correta. Prossegue para o programa de qualquer forma.
             // Primeiramente gera o hash da senha e compara com o hash armazenado.
 
-            funcionario1.autorizadoSistema(scanner.nextLine());
+            funcionario1.loginSistema(scanner.nextLine());
 
             if(!funcionario1.getAcessoSistema())
             {
@@ -147,6 +147,7 @@ public class Main {
 
                         // desloga o usúario quando acabar sua sessão.
                         funcionario1.logoutSistema();
+
                         menu.despedida();
                         break;
 
