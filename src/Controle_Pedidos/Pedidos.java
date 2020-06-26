@@ -4,7 +4,7 @@ import Enum.*;
 
 import java.util.UUID;
 
-public class Pedidos {
+public class Pedidos implements IdPedidos{
 
     private EstadoPedido estadoPedido;
     private PagamentoPedido pagamentoPedido;
